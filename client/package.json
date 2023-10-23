@@ -1,0 +1,24 @@
+{
+  "name": "crazyeights-web-client",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/axwain/crazyeights-ts.git"
+  },
+  "author": "axwain",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/axwain/crazyeights-ts/issues"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5"
+  }
+}
