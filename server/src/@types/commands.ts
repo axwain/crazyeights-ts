@@ -1,4 +1,4 @@
-import { Rules } from "./game"
+import type { Rules, Suit } from "./game"
 
 export type CreateRoomCmd = {
     type: 'createRoomCmd'
@@ -36,5 +36,10 @@ export type DrawCardCmd = {
 export type turnPassCmd = {
     type: 'turnPassCmd'
     clientId: string
+}
+
+export type selectSuitCmd = {
+    type: 'selectSuitCmd'
+    suit: Suit
 }
 

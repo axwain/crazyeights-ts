@@ -80,3 +80,7 @@ export type PlayerDrawMsg = {
     total: number
 }
 
+export type selectSuitMsg = {
+    type: 'selectSuit'
+}
+
