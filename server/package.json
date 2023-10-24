@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "description": "Crazy Eights WebSocket Server",
   "scripts": {
-    "dev": "nodemon -r esbuild-runner/register index.ts"
+    "dev": "nodemon -r esbuild-runner/register src/main.ts"
   },
   "repository": {
     "type": "git",
