@@ -6,3 +6,8 @@ document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   </div>
 `
 
+const ws = new WebSocket('ws://127.0.0.1:9010')
+
+ws.onopen = () => { console.log('opened connection') }
+ws.onmessage = (event) => { console.log('received', event.data) }
+
