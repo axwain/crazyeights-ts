@@ -3,16 +3,19 @@ import type { Rules, Suit } from "./game"
 export type CreateRoomCmd = {
     type: 'createRoomCmd'
     clientId: string
+    playerName: string
 }
 
 export type JoinRoomCmd = {
     type: 'joinRoomCmd'
+    clientId: string
     name: string
     roomCode: string
 }
 
 export type LobbyReadyCmd = {
     type: 'lobbyReadyCmd'
+    clientId: string
     isReady: boolean
 }
 
@@ -40,6 +43,7 @@ export type turnPassCmd = {
 
 export type selectSuitCmd = {
     type: 'selectSuitCmd'
+    clientId: string
     suit: Suit
 }
 
