@@ -4,14 +4,14 @@ export type DataMsg = {
     type: string
 }
 
-export type ConnectMsg = {
-    type: 'connect'
+export type RegisteredMsg = {
+    type: 'registered'
     clientId: string
     playerId: string
 }
 
-export type CreateRoomMsg = {
-    type: 'createRoom'
+export type RoomCreatedMsg = {
+    type: 'roomCreated'
     roomId: string
 }
 
