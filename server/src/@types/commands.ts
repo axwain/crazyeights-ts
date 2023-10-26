@@ -1,48 +1,49 @@
+import { Commands } from "../net/commandTypes"
 import type { Rules, Suit } from "./game"
 
 export type CreateRoomCmd = {
-    type: 'createRoomCmd'
+    type: Commands.create
     clientId: string
     playerName: string
 }
 
 export type JoinRoomCmd = {
-    type: 'joinRoomCmd'
+    type: Commands.join
     clientId: string
-    name: string
+    playerName: string
     roomCode: string
 }
 
-export type LobbyReadyCmd = {
-    type: 'lobbyReadyCmd'
+export type SetReadyCmd = {
+    type: Commands.ready
     clientId: string
     isReady: boolean
 }
 
 export type UpdateRulingCmd = {
-    type: 'updateRulingCmd'
+    type: Commands.updateRuling
     clientId: string
     rules: Rules
 }
 
 export type PlayCardCmd = {
-    type: 'playCardCmd'
+    type: Commands.playCard
     cardId: string
     clientId: string
 }
 
 export type DrawCardCmd = {
-    type: 'drawCardCmd'
+    type: Commands.drawCard
     cliendId: string
 }
 
 export type turnPassCmd = {
-    type: 'turnPassCmd'
+    type: Commands.pass
     clientId: string
 }
 
 export type selectSuitCmd = {
-    type: 'selectSuitCmd'
+    type: Commands.selectSuit
     clientId: string
     suit: Suit
 }

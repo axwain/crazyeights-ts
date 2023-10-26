@@ -1,17 +1,14 @@
-import type { Card, Player, Rules } from './game'
-
-export type DataMsg = {
-    type: string
-}
+import { Messages } from '../net/messageTypes'
+import type { Card, Player, Rules, Suit } from './game'
 
 export type RegisteredMsg = {
-    type: 'registered'
+    type: Messages.registered
     clientId: string
     playerId: string
 }
 
 export type RoomCreatedMsg = {
-    type: 'roomCreated'
+    type: Messages.roomCreated
     roomId: string
 }
 
@@ -19,68 +16,66 @@ export type LobbyPlayer = Player & {
     isReady: string
 }
 
-export type JoinRoomMsg = {
-    type: 'joinedRoom'
+export type JoinedRoomMsg = {
+    type: Messages.joinedRoom
     rules: Rules
     players: LobbyPlayer[]
 }
 
 export type PlayerJoinedMsg = {
-    type: 'playerJoined'
+    type: Messages.playerJoined
     player: Player
 }
 
 export type PlayerUpdatedMsg = {
-    type:'playerUpdated'
+    type: Messages.playerUpdated
     player: LobbyPlayer
 }
 
-export type RuleUpdatedMsg = {
-    type: 'rulingUpdated'
+export type RulingUpdatedMsg = {
+    type: Messages.rulingUpdated
     rules: Rules
 }
 
-export type StartGameMsg = {
-    type: 'startGame'
-}
-
-type PlayerHand = {
+export type PlayerHandObj = {
     playerId: string
     cards: Card & {
         cardId: string
     }
 }
 
-export type TableSetupMsg = {
+export type MatchStartingMsg = {
+    type: Messages.matchStarting
     rules: Rules
-    hands: PlayerHand[]
+    hands: PlayerHandObj[]
     firstCard: Card
     firstPlayerId: string
 }
 
-export type PlayedCardMsg = {
-    type: 'playedCard'
+export type CardPlayedMsg = {
+    type: Messages.cardPlayed
     card: Card
     nextPlayerId: string
 }
 
 export type GameEndedMsg = {
-    type: 'gameEnded'
+    type: Messages.gameEnded
     winnerId: string
 }
 
-export type DrawCardMsg = {
-    type: 'drawCard'
+export type DrawCardsMsg = {
+    type: Messages.drawCards
     cards: Card[]
 }
 
-export type PlayerDrawMsg = {
-    type: 'playerDraw'
+export type PlayerDrawnCardsMsg = {
+    type: Messages.playerDrawnCards
     playerId: string
     total: number
 }
 
-export type selectSuitMsg = {
-    type: 'selectSuit'
+export type SelectedSuitMsg = {
+    type: Messages.selectedSuit
+    suit: Suit
 }
 
