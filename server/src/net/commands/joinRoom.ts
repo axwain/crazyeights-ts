@@ -32,7 +32,7 @@ export const joinRoom = (args: JoinRoomArgs) => {
     const { playerRoomMap, command } = args
     const player = validateAndGetPlayer(args)
     const room = validateAndGetRoom(args)
-    if (player && room) {
+    if (player && room && room.canPlayerJoin()) {
         player.name = command.playerName
         playerRoomMap.set(player.id, room)
         return player
