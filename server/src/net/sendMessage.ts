@@ -1,5 +1,5 @@
-import WebSocket from "ws"
-import { MessageData } from "../@types/net"
+import WebSocket from 'ws'
+import { MessageData } from '../@types/net'
 
 export const sendMessage = <T extends MessageData>(
     message: T,

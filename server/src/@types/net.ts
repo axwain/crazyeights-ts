@@ -1,8 +1,8 @@
-import type WebSocket from "ws"
+import type WebSocket from 'ws'
 import type { Room } from '../core/room'
-import type { Player } from "./game"
-import { Commands } from "../net/commandTypes"
-import { Messages } from "../net/messageTypes"
+import type { Player } from './game'
+import { Commands } from '../net/commandTypes'
+import { Messages } from '../net/messageTypes'
 
 export type NetData = {
     type: string

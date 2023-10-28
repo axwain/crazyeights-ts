@@ -1,4 +1,4 @@
-import type { Player, Rules } from "../@types/game";
+import type { Player, Rules } from '../@types/game';
 
 enum State {
     lobby,

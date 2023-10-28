@@ -1,5 +1,5 @@
-import { Commands } from "../net/commandTypes"
-import type { Rules, Suit } from "./game"
+import { Commands } from '../net/commandTypes'
+import type { Rules, Suit } from './game'
 
 export type CreateRoomCmd = {
     type: Commands.create
