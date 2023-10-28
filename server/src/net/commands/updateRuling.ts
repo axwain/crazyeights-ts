@@ -16,7 +16,7 @@ export const updateRuling = ({
     if (clientPlayerMap.has(command.clientId)) {
         const player = clientPlayerMap.get(command.clientId) as Player
         const room = playerRoomMap.get(player.id)
-        if (room) {
+        if (room && room.isOwner(player)) {
             room.updateRuling(command.rules)
             return room
         }
