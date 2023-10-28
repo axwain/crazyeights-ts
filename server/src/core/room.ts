@@ -1,10 +1,17 @@
-import { Player, Rules } from "../@types/game";
+import type { Player, Rules } from "../@types/game";
+
+enum State {
+    lobby,
+    match,
+    results
+}
 
 export class Room {
     id: string
     owner: Player
     players: Set<Player>
     ruling: Rules
+    state: State
 
     constructor(id: string, roomOwner: Player) {
         this.id = id
@@ -20,14 +27,15 @@ export class Room {
             drawToMatch: false,
             wildFinish: true,
         }
+        this.state = State.lobby
     }
 
     canStartGame() {
-        return this.players.size > 1
+        return this.players.size > 1 && this.state !== State.match
     }
 
     canPlayerJoin() {
-        return this.players.size < 6
+        return this.players.size < 6 && this.state === State.lobby
     }
 
     // do not allocate new memory
@@ -71,5 +79,17 @@ export class Room {
 
     isOwner(player: Player) {
         return player.id === this.owner.id
+    }
+
+    startGame() {
+        this.state = State.match
+    }
+
+    endGame() {
+        this.state = State.results
+    }
+
+    setToLobby() {
+        this.state = State.lobby
     }
 }
