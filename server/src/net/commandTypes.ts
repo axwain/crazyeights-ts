@@ -7,5 +7,6 @@ export enum Commands {
     playCard,
     drawCard,
     pass,
-    selectSuit
+    selectSuit,
+    pickPlayer,
 }

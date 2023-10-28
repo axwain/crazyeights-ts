@@ -20,6 +20,11 @@ export type SetReadyCmd = {
     isReady: boolean
 }
 
+export type GameStartCmd = {
+    type: Commands.startGame
+    clientId: string
+}
+
 export type UpdateRulingCmd = {
     type: Commands.updateRuling
     clientId: string
@@ -37,14 +42,20 @@ export type DrawCardCmd = {
     cliendId: string
 }
 
-export type turnPassCmd = {
+export type TurnPassCmd = {
     type: Commands.pass
     clientId: string
 }
 
-export type selectSuitCmd = {
+export type SelectSuitCmd = {
     type: Commands.selectSuit
     clientId: string
     suit: Suit
+}
+
+export type PickPlayerCmd = {
+    type: Commands.pickPlayer
+    clientId: string
+    pickedPlayerId: string
 }
 
