@@ -11,5 +11,6 @@ export enum Messages {
     drawCards,
     playerDrawnCards,
     selectedSuit,
+    handChanged,
 }
 

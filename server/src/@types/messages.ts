@@ -37,17 +37,17 @@ export type RulingUpdatedMsg = {
     rules: Rules
 }
 
+export type IndexedCard = Card & { cardId: string }
+
 export type PlayerHandObj = {
     playerId: string
-    cards: Card & {
-        cardId: string
-    }
+    cards: IndexedCard
 }
 
 export type MatchStartingMsg = {
     type: Messages.matchStarting
     rules: Rules
-    hands: PlayerHandObj[]
+    hand: PlayerHandObj[]
     firstCard: Card
     firstPlayerId: string
 }
@@ -79,3 +79,7 @@ export type SelectedSuitMsg = {
     suit: Suit
 }
 
+export type HandChanged = {
+    type: Messages.handChanged
+    cards: IndexedCard[]
+}
